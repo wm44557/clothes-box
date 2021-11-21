@@ -11,8 +11,8 @@ const Checkout1 = () => {
     const [country, setCountry] = useState("United States");
     const {basket} = useContext(AppContext) || [];
     const {basketPrice} = useContext(AppContext) || [];
-    const {removeFromBasket} = useContext(AppContext) || null;
-    const {clearBasket} = useContext(AppContext) || null;
+    const {removeFromBasket} = useContext(AppContext) || {};
+    const {clearBasket} = useContext(AppContext) || {};
 
     const changeText = (e) => {
         setMenu(false);
