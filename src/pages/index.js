@@ -7,7 +7,7 @@ import {useQueryImages} from "../hooks/useQueryImages";
 import {AppContext} from "../data/AppContext";
 
 const IndexPage = ({data: {gridItems, sliderItems}}) => {
-    const {category} = useContext(AppContext);
+    const {category} = useContext(AppContext) || {};
     const {edges: productsEdges} = gridItems;
     const {edges: sliderEdges} = sliderItems;
     const {productsData: gridData} = useQueryImages(productsEdges, products, category);
