@@ -11,7 +11,8 @@ import {
 
 
 export const Menu = () => {
-    const {category, setCategory} = useContext(AppContext);
+    const {category} = useContext(AppContext) || {};
+    const {setCategory} = useContext(AppContext) || {};
     return (
         <MenuWrapper>
             <MenuItem

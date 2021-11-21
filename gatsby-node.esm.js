@@ -32,7 +32,6 @@ async function turnPizzasIntoPages({graphql, actions}) {
 
     // 3. Loop over each pizza and create a page for that pizza
     gridData.forEach((product) => {
-        console.log(product);
         actions.createPage({
             // What is the URL for this new page??
             path: `product/${product.name}`,
