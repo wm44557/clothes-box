@@ -109,7 +109,7 @@ export default function Example({open, setOpen}) {
                                             checkout.</p>
                                         <div className="mt-6">
                                             <Link
-                                                to="/Checkout"
+                                                to="/checkout"
                                                 className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                                                 onClick={() => setOpen(false)}
                                             >
