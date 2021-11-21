@@ -1,0 +1,5 @@
+export const SHOES_CATEGORY = 'Shoes'
+export const CAPS_CATEGORY = 'Cap'
+export const TROUSERS_CATEGORY = 'Trousers'
+export const TSHIRTS_CATEGORY = 'T-shirts'
+export const BESTSELLERS_CATEGORY = 'Bestsellers'
