@@ -6,7 +6,8 @@ import {AppContext} from "../data/AppContext";
 import {Link} from "gatsby"
 
 const ProductCard = ({product}) => {
-    const {addToBasket, setOpen} = useContext(AppContext);
+    const {setOpen} = useContext(AppContext) || {};
+    const {addToBasket} = useContext(AppContext) || {};
 
     const image = getImage(product.image)
     return (

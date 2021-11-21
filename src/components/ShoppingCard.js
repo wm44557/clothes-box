@@ -6,8 +6,9 @@ import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {Link} from "gatsby"
 
 export default function Example({open, setOpen}) {
-    const {basket, basketPrice, removeFromBasket} = useContext(AppContext);
-    console.log(basketPrice);
+    const {basket} = useContext(AppContext) || [];
+    const {basketPrice} = useContext(AppContext) || {};
+    const {removeFromBasket} = useContext(AppContext) || {};
     return (
         <Transition.Root show={open} as={Fragment}>
             <Dialog as="div" className="fixed inset-0 overflow-hidden z-30" onClose={setOpen}>

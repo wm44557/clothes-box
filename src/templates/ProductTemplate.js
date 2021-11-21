@@ -6,9 +6,9 @@ import {AppContext} from "../data/AppContext";
 const Product3 = ({pageContext: {product}}) => {
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
-    console.log(product);
     const image = getImage(product.image)
-    const {addToBasket, setOpen} = useContext(AppContext);
+    const {addToBasket} = useContext(AppContext) || {};
+    const {setOpen} = useContext(AppContext) || {};
 
     return (
         <div className="md:flex items-start justify-center py-8 xl:px-20 md:px-3 px-4">
