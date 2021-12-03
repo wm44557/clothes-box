@@ -12,7 +12,6 @@ export const useQueryImages = (queryData, productsDB, category = 'all') => {
                     category === product.category && !productsData.includes(product) && productsData.push(product);
                     category === product.bestseller && !productsData.includes(product) && productsData.push(product);
 
-
                     category === 'all' && !productsData.includes(product) && productsData.push(product);
 
 
