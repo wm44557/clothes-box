@@ -1,10 +1,11 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Slider} from "../components/Slider";
 import ProductsGrid from "../components/ProductsGrid";
 import {graphql} from "gatsby";
 import {products, carousel} from "../data/data";
 import {useQueryImages} from "../hooks/useQueryImages";
 import {AppContext} from "../data/AppContext";
+import ReactGa from 'react-ga';
 
 const IndexPage = ({data: {gridItems, sliderItems}}) => {
     const {category} = useContext(AppContext) || {};
@@ -13,7 +14,10 @@ const IndexPage = ({data: {gridItems, sliderItems}}) => {
     const {productsData: gridData} = useQueryImages(productsEdges, products, category);
     const {productsData: sliderData} = useQueryImages(sliderEdges, carousel);
     console.log(gridData);
-
+    useEffect(() => {
+        ReactGa.initialize('G-59S3C0VRNH');
+        ReactGa.pageview('/');
+    }, [])
     return (
         <>
             <Slider data={sliderData}/>

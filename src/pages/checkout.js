@@ -1,8 +1,9 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
 import {AppContext} from "../data/AppContext";
 import {Link} from "gatsby";
 import ThankYou from "../components/ThankYou";
+import ReactGa from "react-ga";
 
 const Checkout1 = () => {
     const countries = ["China", "Russia", "UK"];
@@ -13,11 +14,21 @@ const Checkout1 = () => {
     const {basketPrice} = useContext(AppContext) || [];
     const {removeFromBasket} = useContext(AppContext) || {};
     const {clearBasket} = useContext(AppContext) || {};
-
+    useEffect(() => {
+        ReactGa.initialize('G-59S3C0VRNH');
+        ReactGa.pageview('/checkout');
+    }, [])
     const changeText = (e) => {
         setMenu(false);
         setCountry(e.target.textContent);
     };
+    const googleEvent = () => {
+        ReactGa.event({
+            category: 'Button',
+            action: 'Item sold!'
+        })
+        alert('Send the google analytics info!');
+    }
     if (thankYou) return <ThankYou/>
     return (
         <div className="flex justify-center items-center">
@@ -184,6 +195,7 @@ const Checkout1 = () => {
                                   py-4 rounded w-full flex justify-center items-center px-6 py-3 border border-transparent
                                    rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                                 onClick={() => {
+                                    googleEvent();
                                     setThankYou(true);
                                     clearBasket();
                                 }}

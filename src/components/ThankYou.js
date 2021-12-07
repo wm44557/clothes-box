@@ -1,11 +1,14 @@
 /* This example requires Tailwind CSS v2.0+ */
 import React, {useContext, useState} from "react";
-import {OutboundLink} from "gatsby-plugin-google-gtag"
+import {OutboundLink} from "gatsby-plugin-google-gtag";
+import ReactGA from 'react-ga'
+
 
 import {AnnotationIcon, GlobeAltIcon, LightningBoltIcon, ScaleIcon} from '@heroicons/react/outline'
 
 
 export default function Example() {
+
     return (
         <div className="py-12 bg-white">
             <OutboundLink href="/">
@@ -18,7 +21,8 @@ export default function Example() {
                         Thank you for your order
                     </p>
                     <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-                        Your order has been processed and we will inform you of the next steps in your order in extra
+                        Your order has been processed and we will inform you of the next steps in your order in
+                        extra
                         email.
                     </p>
                 </div>
